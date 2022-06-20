@@ -1,5 +1,4 @@
 from datetime import datetime
-import os
 from config import config
 from sys import argv
 from custom_status_check import custom_status_check
