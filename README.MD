@@ -2,7 +2,7 @@
 
 A simple Python program for sending an alert email via `stmp` when a request to a given domain results in an error respponse. I have found this useful for keeping track of the status of an express server which occasionally stops responding correctly but does not crash out of the server process and trigger existing monitoring services. 
 
-The script will track the previous up/down state of the target domain and only send an email if the status has changed from `UP` to `DOWN` when it was last ran. 
+The script will track the previous up/down state of the target domain by generating a `.upstate` text file, and only send an email if the status has changed from `UP` to `DOWN` when the program was last executed. 
 
 To use, setup your `config.json` with your details as follows:
 
