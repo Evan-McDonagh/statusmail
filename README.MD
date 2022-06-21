@@ -8,7 +8,7 @@ To use, setup your `config.json` with your details as follows:
 
 ```json
 {
-    "sender": "<My Email Display Name> [myemail@emaildomain.com]",
+    "sender": "<My Email Display Name> myemail@emaildomain.com",
     "domain": "mydomain.tocheck.com",
     "recipients": [
         "email1@torecieve.com",
