@@ -3,10 +3,17 @@ import json
 from typing import List
 
 @dataclass
+class SMTPConfig:
+    server: str
+    login: str 
+    password: str
+
+@dataclass
 class __Config:
     domain: str
     sender: str
     recipients: List[str]
+    smtp: SMTPConfig
 
     @classmethod
     def from_json(cls,json: dict):
@@ -14,6 +21,11 @@ class __Config:
             domain=json["domain"],
             sender=json["sender"],
             recipients=json["recipients"],
+            smtp=SMTPConfig(
+                server=json["smtp"]["server"],
+                login=json["smtp"]["login"],
+                password=json["smtp"]["password"]
+            )
         )
 
     @classmethod
