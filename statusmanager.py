@@ -14,8 +14,13 @@ class UpState:
     DOWN = "DOWN"
 
 def get_up_state() -> str:
-    with open("./.upstate","r") as f:
-        result = f.readlines()[0]
+    try:
+        with open("./.upstate","r") as f:
+            result = f.readlines()[0]
+    except FileNotFoundError:
+        with open("./.upstate","w") as f:
+            result = UpState.UP
+            f.write(result)
     return result
 
 def set_up_state(state: str):

@@ -44,7 +44,7 @@ def outage_email(sender: str,recipients: Tuple[str],outage_report: OutageReport)
     msg = EmailMessage()
     msg.set_content(strip_tags(html))
     msg.add_alternative(html,subtype="html")
-    msg["Subject"] = f"Error {outage_report.response.status_code} Querying ${outage_report.domain}"
+    msg["Subject"] = f"Error {outage_report.response.status_code} Querying {outage_report.domain}"
     msg["From"] = parse_address(sender)
     msg["To"] = tuple(map(parse_address,recipients))
     return msg
